@@ -7,7 +7,7 @@
 {% endblock %}
 
 {% block content %}
-    <h2>Are you sure to delete article "{{ memo.description }}"?</h2>
+    <h2>Are you sure to delete Issue "{{ memo.description }}"?</h2>
     <p>Date: {{ memo.execution_date }}</p>
     <form action="{% url 'memo_delete' memo.pk %}" method="post">
         {% csrf_token %}
