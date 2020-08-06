@@ -4,9 +4,15 @@ from django.db import models
 class IssueType(models.Model):
     type = models.CharField(max_length=40, null=False, blank=False, verbose_name='Type')
 
+    def __str__(self):
+        return f'{self.type}'
+
 
 class IssueStatus(models.Model):
     status = models.CharField(max_length=40, null=False, blank=False, verbose_name='Status')
+
+    def __str__(self):
+        return f'{self.status}'
 
 
 class Issue(models.Model):

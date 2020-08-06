@@ -1,6 +1,5 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from django.http import HttpResponseNotAllowed
-from django.utils.timezone import make_naive
 from django.views.generic import View, TemplateView
 
 from webapp.models import Issue, IssueStatus, IssueType
@@ -31,6 +30,7 @@ class IssueView(TemplateView):
 class IssueCreateView(View):
     def get(self, request):
         form = IssueForm()
+
         return render(request, 'issue_create.html', context={
             'form': form
         })
