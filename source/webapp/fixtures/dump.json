@@ -1,0 +1,86 @@
+[
+{
+  "model": "webapp.issuetype",
+  "pk": 1,
+  "fields": {
+    "type": "Task"
+  }
+},
+{
+  "model": "webapp.issuetype",
+  "pk": 2,
+  "fields": {
+    "type": "Bug"
+  }
+},
+{
+  "model": "webapp.issuetype",
+  "pk": 3,
+  "fields": {
+    "type": "Enhancement"
+  }
+},
+{
+  "model": "webapp.issuestatus",
+  "pk": 1,
+  "fields": {
+    "status": "New"
+  }
+},
+{
+  "model": "webapp.issuestatus",
+  "pk": 2,
+  "fields": {
+    "status": "In Progress"
+  }
+},
+{
+  "model": "webapp.issuestatus",
+  "pk": 3,
+  "fields": {
+    "status": "Done"
+  }
+},
+{
+  "model": "webapp.issue",
+  "pk": 11,
+  "fields": {
+    "title": "Make a dinner",
+    "description": "Cook some meat.",
+    "status": 1,
+    "type": 1,
+    "create_at": "2020-08-06T16:21:27.432Z",
+    "updated_at": "2020-08-06T16:36:45.180Z"
+  }
+},
+{
+  "model": "webapp.issue",
+  "pk": 15,
+  "fields": {
+    "title": "New Task",
+    "description": "To sleep 10 hours",
+    "status": 1,
+    "type": 1,
+    "create_at": "2020-08-06T17:10:53.099Z",
+    "updated_at": "2020-08-06T17:10:53.099Z"
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 1,
+  "fields": {
+    "password": "pbkdf2_sha256$150000$lfEwX6riAmVj$9dYuhrJRIZjE7y8DAB6xxSasfiMipLNp0FhjpdOkouY=",
+    "last_login": "2020-08-06T16:25:16.168Z",
+    "is_superuser": true,
+    "username": "admin",
+    "first_name": "",
+    "last_name": "",
+    "email": "admin@admin.com",
+    "is_staff": true,
+    "is_active": true,
+    "date_joined": "2020-08-06T16:24:31.179Z",
+    "groups": [],
+    "user_permissions": []
+  }
+}
+]

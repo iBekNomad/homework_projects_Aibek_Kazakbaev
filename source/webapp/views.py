@@ -81,12 +81,19 @@ class IssueUpdateView(TemplateView):
             })
 
 
-def issue_delete_view(request, pk):
-    issue = get_object_or_404(Issue, pk=pk)
-    if request.method == 'GET':
-        return render(request, 'issue_delete.html', context={'issue': issue})
-    elif request.method == 'POST':
+class IssueDeleteView(TemplateView):
+    template_name = 'issue_delete.html'
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+
+        pk = self.kwargs.get('pk')
+        issue = get_object_or_404(Issue, pk=pk)
+
+        context['issue'] = issue
+        return context
+
+    def post(self, request, pk):
+        issue = get_object_or_404(Issue, pk=pk)
         issue.delete()
         return redirect('index')
-    else:
-        return HttpResponseNotAllowed(permitted_methods=['GET', 'POST'])
