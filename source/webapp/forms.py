@@ -6,8 +6,8 @@ class IssueForm(forms.Form):
     title = forms.CharField(max_length=200, required=True, label='Title')
     description = forms.CharField(max_length=2000, required=True, label="Description",
                                   widget=forms.Textarea)
-    status = forms.ModelChoiceField(queryset=IssueStatus.status, required=True, label='Status')
-    type = forms.ModelChoiceField(queryset=IssueType.type, required=True, label='Type')
+    status = forms.ModelChoiceField(queryset=IssueStatus.objects.all(), required=True, label='Status')
+    type = forms.ModelChoiceField(queryset=IssueType.objects.all(), required=True, label='Type')
 
 
 class IssueStatusForm(forms.Form):

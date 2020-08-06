@@ -15,11 +15,11 @@ class Issue(models.Model):
     status = models.ForeignKey('webapp.IssueStatus', related_name='statuses', on_delete=models.PROTECT,
                                verbose_name='Status')
     type = models.ForeignKey('webapp.IssueType', related_name='types', on_delete=models.PROTECT, verbose_name='Type')
-    create_at = models.DateField(auto_now_add=True, verbose_name='Create date')
-    updated_at = models.DateField(auto_now=True, verbose_name='Updated date')
+    create_at = models.DateTimeField(auto_now_add=True, verbose_name='Create date')
+    updated_at = models.DateTimeField(auto_now=True, verbose_name='Updated date')
 
     def __str__(self):
-        return "{}. {}".format(self.title, self.type)
+        return "{}. {}".format(self.pk, self.title)
 
     class Meta:
         verbose_name = 'Issue'
